@@ -1,6 +1,0 @@
-res://default_bus_layout.tres
-res://singletons/audio_manager.tscn
-res://singletons/audio_manager.gd
-res://singletons/scene_transition.tscn
-res://singletons/scene_transition.gd
-res://scenes/main.tscn
