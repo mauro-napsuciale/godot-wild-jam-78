@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dkqquwoctrr6j"]
+[gd_scene load_steps=2 format=3 uid="uid://dkqquwoctrr6j"]
+
+[ext_resource type="Script" path="res://singletons/scene_transition.gd" id="1_6savq"]
 
 [node name="SceneTransition" type="CanvasLayer"]
+script = ExtResource("1_6savq")
