@@ -7,7 +7,7 @@ signal on_bg_music_transition_start
 signal on_bg_music_transition_end
 
 func fade_out_bg_music():
-	var tween = create_tween()
+	var tween: Tween = create_tween()
 	
 	on_bg_music_transition_start.emit()
 	tween.tween_property(
@@ -20,7 +20,7 @@ func fade_out_bg_music():
 
 func fade_in_bg_music():
 	bg_player.volume_db = -80.0
-	var tween = create_tween()
+	var tween: Tween = create_tween()
 	
 	on_bg_music_transition_start.emit()
 	tween.tween_property(
