@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0byhtsapxbh0"]
+[gd_scene load_steps=4 format=3 uid="uid://d0byhtsapxbh0"]
 
 [ext_resource type="PackedScene" uid="uid://dswihecyle341" path="res://scenes/characters/player.tscn" id="1_6l1v1"]
 [ext_resource type="PackedScene" uid="uid://nm81x7rn3k1b" path="res://scenes/cameras/player_camera.tscn" id="1_8w23q"]
+[ext_resource type="Texture2D" uid="uid://bwm1qsuay17n2" path="res://icon.svg" id="1_p8nak"]
 
 [node name="Tutorial" type="Node2D"]
+
+[node name="TestGround" type="Sprite2D" parent="."]
+scale = Vector2(48, 48)
+texture = ExtResource("1_p8nak")
 
 [node name="Player" parent="." instance=ExtResource("1_6l1v1")]
 
