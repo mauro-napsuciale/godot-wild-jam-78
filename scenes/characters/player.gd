@@ -23,10 +23,6 @@ func _input(event: InputEvent) -> void:
 
 func _process(_delta: float) -> void:
 	_input_vector = _get_move_vector()
-	if _input_vector.x >= 0:
-		sprite.flip_h = false
-		return
-	sprite.flip_h = true
 
 func _physics_process(delta: float) -> void:
 	if _current_state == STATE.ATTACK:
@@ -55,6 +51,10 @@ func _handle_move_state(delta: float):
 	animation_player.speed_scale = 3.0
 	animation_player.play("idle")
 	self.velocity = _input_vector * pow(move_speed, accel_pwr) * delta * Engine.time_scale
+	if _input_vector.x >= 0:
+		sprite.flip_h = false
+		return
+	sprite.flip_h = true
 
 func _handle_idle_state(delta: float):
 	_current_state = STATE.IDLE

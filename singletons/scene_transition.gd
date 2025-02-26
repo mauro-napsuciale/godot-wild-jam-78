@@ -91,7 +91,7 @@ func fade_to_scene(scene_key: SCENE_KEYS):
 	if path == null:
 		printerr(scene_key ,"Invalid scene key. It does not exist in the scenes dictionary")
 		return
-	var packed_scene: PackedScene = load(path)
+	var packed_scene: PackedScene = ResourceLoader.load(path)
 	fade_out()
 	await on_fade_out_end
 	var tree = get_tree()

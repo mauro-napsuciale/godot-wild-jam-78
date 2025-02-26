@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0byhtsapxbh0"]
+[gd_scene load_steps=4 format=4 uid="uid://d0byhtsapxbh0"]
 
 [ext_resource type="PackedScene" uid="uid://dswihecyle341" path="res://scenes/characters/player.tscn" id="1_6l1v1"]
 [ext_resource type="PackedScene" uid="uid://nm81x7rn3k1b" path="res://scenes/cameras/player_camera.tscn" id="1_8w23q"]
-[ext_resource type="Texture2D" uid="uid://bwm1qsuay17n2" path="res://icon.svg" id="1_p8nak"]
+[ext_resource type="TileSet" uid="uid://ifme4rcnndbc" path="res://resources/table_tileset.tres" id="1_ep8pq"]
 
 [node name="Tutorial" type="Node2D"]
 
-[node name="TestGround" type="Sprite2D" parent="."]
-scale = Vector2(48, 48)
-texture = ExtResource("1_p8nak")
+[node name="Tilemap" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tilemap"]
+tile_map_data = PackedByteArray("AAAAAP3/AQABAAEAAAAAAP7/AQABAAEAAAAAAP//AQABAAEAAAABAP3/AQABAAEAAAABAP7/AQABAAEAAAABAP//AQABAAEAAAACAP3/AQABAAEAAAACAP7/AQABAAEAAAACAP//AQABAAEAAAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAABAAAAAQABAAEAAAABAAEAAQABAAEAAAABAAIAAQABAAEAAAACAAAAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAD9//3/AQABAAEAAAD9//7/AQABAAEAAAD9////AQABAAEAAAD+//3/AQABAAEAAAD+//7/AQABAAEAAAD+////AQABAAEAAAD///3/AQABAAEAAAD///7/AQABAAEAAAD/////AQABAAEAAAD9/wAAAQABAAEAAAD9/wEAAQABAAEAAAD9/wIAAQABAAEAAAD+/wAAAQABAAEAAAD+/wEAAQABAAEAAAD+/wIAAQABAAEAAAD//wAAAQABAAEAAAD//wEAAQABAAEAAAD//wIAAQABAAEAAAD9//z/AQABAAAAAAD+//z/AQABAAAAAAD///z/AQABAAAAAAAAAPz/AQABAAAAAAABAPz/AQABAAAAAAACAPz/AQABAAAAAAD9/wMAAQABAAIAAAD+/wMAAQABAAIAAAD//wMAAQABAAIAAAAAAAMAAQABAAIAAAABAAMAAQABAAIAAAACAAMAAQABAAIAAAADAP3/AQACAAEAAAADAP7/AQACAAEAAAADAP//AQACAAEAAAADAAAAAQACAAEAAAADAAEAAQACAAEAAAADAAIAAQACAAEAAAD8//3/AQAAAAEAAAD8//7/AQAAAAEAAAD8////AQAAAAEAAAD8/wAAAQAAAAEAAAD8/wEAAQAAAAEAAAD8/wIAAQAAAAEAAAD8/wMAAQAAAAIAAAADAAMAAQACAAIAAAADAPz/AQACAAAAAAD8//z/AQAAAAAAAAA=")
+tile_set = ExtResource("1_ep8pq")
 
 [node name="Player" parent="." instance=ExtResource("1_6l1v1")]
 
