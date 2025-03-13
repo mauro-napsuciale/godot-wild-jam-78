@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://owpn6oipfefw"
-path="res://.godot/imported/idle.png-fc49806d5fd941f8e998ac3720659a9e.ctex"
+uid="uid://hphqmlnfacfd"
+path="res://.godot/imported/ss_level_obstacles.png-95dbecb10f7e0f5ab9bc4295faaad183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/idle.png"
-dest_files=["res://.godot/imported/idle.png-fc49806d5fd941f8e998ac3720659a9e.ctex"]
+source_file="res://assets/img/ss_level_obstacles.png"
+dest_files=["res://.godot/imported/ss_level_obstacles.png-95dbecb10f7e0f5ab9bc4295faaad183.ctex"]
 
 [params]
 

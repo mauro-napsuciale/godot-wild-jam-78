@@ -1,16 +1,41 @@
-[gd_scene load_steps=4 format=4 uid="uid://d0byhtsapxbh0"]
+[gd_scene load_steps=9 format=4 uid="uid://d0byhtsapxbh0"]
 
+[ext_resource type="Script" uid="uid://cjm0jl15plrm5" path="res://scenes/levels/level_config.gd" id="1_1wklo"]
 [ext_resource type="PackedScene" uid="uid://dswihecyle341" path="res://scenes/characters/player.tscn" id="1_6l1v1"]
 [ext_resource type="PackedScene" uid="uid://nm81x7rn3k1b" path="res://scenes/cameras/player_camera.tscn" id="1_8w23q"]
 [ext_resource type="TileSet" uid="uid://ifme4rcnndbc" path="res://resources/table_tileset.tres" id="1_ep8pq"]
+[ext_resource type="PackedScene" uid="uid://cmvmye3fw78rw" path="res://scenes/spawners/enemy_spawner.tscn" id="4_t87u7"]
+
+[sub_resource type="Curve" id="Curve_1wklo"]
+_limits = [0.0, 1.0, 0.0, 5.0]
+_data = [Vector2(0, 1), 0.0, -0.2, 0, 1, Vector2(5, 0), -0.2, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7ac3l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_iig34"]
+_limits = [0.0, 1.0, 0.0, 30.0]
+_data = [Vector2(0, 0), 0.0, 0.0333333, 0, 1, Vector2(30, 1), 0.0333333, 0.0, 1, 0]
+point_count = 2
 
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_1wklo")
+total_waves = 5
+spawn_rate_curve = SubResource("Curve_1wklo")
+spawn_amount_curve = SubResource("Curve_7ac3l")
+wave_rest_time = SubResource("Curve_iig34")
 
 [node name="Tilemap" type="Node2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tilemap"]
 tile_map_data = PackedByteArray("AAAAAP3/AQABAAEAAAAAAP7/AQABAAEAAAAAAP//AQABAAEAAAABAP3/AQABAAEAAAABAP7/AQABAAEAAAABAP//AQABAAEAAAACAP3/AQABAAEAAAACAP7/AQABAAEAAAACAP//AQABAAEAAAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAABAAAAAQABAAEAAAABAAEAAQABAAEAAAABAAIAAQABAAEAAAACAAAAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAD9//3/AQABAAEAAAD9//7/AQABAAEAAAD9////AQABAAEAAAD+//3/AQABAAEAAAD+//7/AQABAAEAAAD+////AQABAAEAAAD///3/AQABAAEAAAD///7/AQABAAEAAAD/////AQABAAEAAAD9/wAAAQABAAEAAAD9/wEAAQABAAEAAAD9/wIAAQABAAEAAAD+/wAAAQABAAEAAAD+/wEAAQABAAEAAAD+/wIAAQABAAEAAAD//wAAAQABAAEAAAD//wEAAQABAAEAAAD//wIAAQABAAEAAAD9//z/AQABAAAAAAD+//z/AQABAAAAAAD///z/AQABAAAAAAAAAPz/AQABAAAAAAABAPz/AQABAAAAAAACAPz/AQABAAAAAAD9/wMAAQABAAIAAAD+/wMAAQABAAIAAAD//wMAAQABAAIAAAAAAAMAAQABAAIAAAABAAMAAQABAAIAAAACAAMAAQABAAIAAAADAP3/AQACAAEAAAADAP7/AQACAAEAAAADAP//AQACAAEAAAADAAAAAQACAAEAAAADAAEAAQACAAEAAAADAAIAAQACAAEAAAD8//3/AQAAAAEAAAD8//7/AQAAAAEAAAD8////AQAAAAEAAAD8/wAAAQAAAAEAAAD8/wEAAQAAAAEAAAD8/wIAAQAAAAEAAAD8/wMAAQAAAAIAAAADAAMAAQACAAIAAAADAPz/AQACAAAAAAD8//z/AQAAAAAAAAA=")
 tile_set = ExtResource("1_ep8pq")
+
+[node name="EnemySpawner" parent="Tilemap/TileMapLayer" node_paths=PackedStringArray("level_config") instance=ExtResource("4_t87u7")]
+position = Vector2(655, -633)
+level_config = NodePath("../../..")
 
 [node name="Player" parent="." instance=ExtResource("1_6l1v1")]
 

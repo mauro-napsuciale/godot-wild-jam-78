@@ -1,0 +1,11 @@
+extends Node
+
+signal on_enemy_spawn_enabled
+signal on_enemy_spawn_disabled
+signal on_player_death
+signal on_player_damage_received
+signal on_level_config_changed
+signal on_level_goal_achieved
+signal on_level_goal_failed
+signal on_wave_start
+signal on_wave_end

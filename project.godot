@@ -13,11 +13,12 @@ config_version=5
 config/name="GodotWildJam78"
 config/version="0.0.1"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+SignalBus="*res://singletons/signal_bus.gd"
 Utils="*res://singletons/utils.gd"
 AudioManager="*res://singletons/audio_manager.tscn"
 SceneTransition="*res://singletons/scene_transition.tscn"
@@ -27,6 +28,11 @@ SceneTransition="*res://singletons/scene_transition.tscn"
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
+
+[global_group]
+
+enemies=""
+targets="Set of nodes to be targeted by nodes in the \"enemies\" group"
 
 [input]
 

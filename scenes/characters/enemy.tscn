@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd12tbhhnsjih"]
+
+[ext_resource type="Script" uid="uid://b8ayh6p032fbg" path="res://scenes/characters/enemy.gd" id="1_6biui"]
+[ext_resource type="Theme" uid="uid://dg7n3e8g2eygt" path="res://resources/default_theme.tres" id="1_25olp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6408"]
+radius = 64.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_6biui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x6408")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -65.0
+offset_top = -213.0
+offset_right = 64.0
+offset_bottom = 242.0
+theme = ExtResource("1_25olp")
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 256
+text = "o"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0

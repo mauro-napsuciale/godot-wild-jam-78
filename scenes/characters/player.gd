@@ -21,6 +21,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("attack"):
 		_current_state = STATE.ATTACK
 
+func _ready() -> void:
+	Utils.player_node_ref = self
+
 func _process(_delta: float) -> void:
 	_input_vector = _get_move_vector()
 

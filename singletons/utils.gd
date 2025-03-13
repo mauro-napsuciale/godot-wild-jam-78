@@ -4,6 +4,8 @@ extends Node
 @export_range(0.0, 1.0) var slow_motion_defualt_timescale = 0.25
 @export_range(0.01, 1.0) var slow_motion_default_duration = 0.25
 
+var player_node_ref: Node2D
+
 func slow_motion(duration: float = slow_motion_default_duration, time_scale: float = slow_motion_defualt_timescale):
 	Engine.time_scale = time_scale
 	print("slowmo start", time_scale)
